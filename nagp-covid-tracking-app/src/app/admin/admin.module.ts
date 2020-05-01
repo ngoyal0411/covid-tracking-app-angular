@@ -40,7 +40,7 @@ import { AdminRoutingModule } from './admin-routing.module';
  * This is the class that will be imported wherever needed.
  */
 export class AdminModule {
-  constructor() {
-    console.log("Admin Module loaded.");
-  }
+    constructor() {
+      console.log("Admin Module loaded.");
+    }
  }

@@ -1,0 +1,22 @@
+<app-portal-header></app-portal-header>
+<nav mat-tab-nav-bar>
+	<a mat-tab-link
+	[routerLink]="['states']"
+	   routerLinkActive #rla="routerLinkActive"
+	   [active]="rla.isActive">
+	  Dashboard
+	</a>
+	<a mat-tab-link
+	   routerLinkActive #rla="routerLinkActive"
+	   [active]="rla.isActive">
+	  Latest News
+	</a>
+	<a mat-tab-link
+	   routerLinkActive #rla="routerLinkActive"
+	   [active]="rla.isActive">
+	  Precautions
+	</a>
+  </nav>
+  <router-outlet></router-outlet>
+
+		

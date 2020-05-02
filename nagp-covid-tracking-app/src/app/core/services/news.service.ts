@@ -1,29 +1,31 @@
 import { Injectable } from '@angular/core';
-import { IUserDetail } from '../../shared/interfaces/IUserDetail';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, of, throwError} from 'rxjs';
 import { catchError  } from 'rxjs/operators';
+import { INewsDetail } from 'src/app/shared/interfaces/INewsDetail';
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
-
+  
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
-export class UserDetailService {
+export class NewsService{
+    private apiURL = "api/news";
 
-  private apiURL = "api/userDetail";
+    constructor(private http: HttpClient) { 
+      console.log("News Service");
+    }
 
-  constructor(private http: HttpClient) { }
-
-  /** GET ALL user detail. */
-  getUserDetails(): Observable<IUserDetail[]> {
-    return this.http.get<IUserDetail[]>(this.apiURL);
+     /* GET ALL latest news detail. */
+  getNewsDetails(): Observable<INewsDetail[]> {
+    return this.http.get<INewsDetail[]>(this.apiURL);     
   }
 
-  addUser(newUser: IUserDetail): Observable<IUserDetail> {
-    return this.http.post<IUserDetail>(this.apiURL, newUser, httpOptions).pipe(
+  addNews(latestNews: INewsDetail): Observable<INewsDetail> {
+    console.log(latestNews);
+    return this.http.post<INewsDetail>(this.apiURL, latestNews, httpOptions).pipe(
       catchError(this.handleError)
     );
   }
@@ -43,4 +45,5 @@ export class UserDetailService {
     return throwError(
       'Something bad happened; please try again later.');
   };
+
 }

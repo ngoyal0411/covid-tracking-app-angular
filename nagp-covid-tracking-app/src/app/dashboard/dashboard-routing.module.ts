@@ -11,11 +11,11 @@ import { SharedMaterialModule } from '../shared/shared-material.module';
 
 const dashboardRoutes: Routes=[
     {path:'',component:DashboardComponent,children:[
-      {path:'',redirectTo:'states',pathMatch:'full'},
-      {path:'states',component:StatesDetailComponent},
+      {path:'',redirectTo:'statelist',pathMatch:'full'},
+      {path:'statelist',component:StatesDetailComponent},
       {path:'news',component:LatestNewsComponent},
       {path:'precautions',component:PrecautionsComponent},
-      {path:'districts',component:DistrictsDetailComponent}
+      {path:'statelist/:district',component:DistrictsDetailComponent}
     ]
     },
   

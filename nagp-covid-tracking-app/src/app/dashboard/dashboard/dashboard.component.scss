@@ -1,0 +1,11 @@
+.mat-tab-link {
+    opacity: 1;
+    color: whitesmoke;
+  }
+  .mat-elevation-z4{
+    background-color: black;
+  }
+  .mat-tab-link:focus {
+    color:blue; 
+    column-rule-color: blue;
+  }

@@ -8,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 /** Dashboard component class. */
 export class DashboardComponent implements OnInit {
 
-  /** Constructor that injects router. */
+  navLinks = [
+    {label: 'Dashboard', path:''},
+    {label: 'Latest News', path:'news'},
+    {label: 'Precautions', path:'precautions'}
+  ];
   constructor() {
 }
   ngOnInit() {

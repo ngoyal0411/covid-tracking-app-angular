@@ -1,1 +1,41 @@
-<p>District</p>
+<div class="container">
+    <div class="district-container mat-elevation-z8">
+      <table mat-table [dataSource]="districtWiseDetail | keyvalue" MatSort>
+    
+        <!-- State Column -->
+        <ng-container matColumnDef="district">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>District </th>
+          <td mat-cell *matCellDef="let district"> 
+           {{district.key}}
+          </td>
+        </ng-container>
+    
+        <!-- Confirmed Column -->
+        <ng-container matColumnDef="confirmed">
+          <th mat-header-cell *matHeaderCellDef> Confirmed </th>
+          <td mat-cell *matCellDef="let district"> {{district.value.confirmed}} </td>
+        </ng-container>
+    
+        <!-- Active Column -->
+        <ng-container matColumnDef="active">
+          <th mat-header-cell *matHeaderCellDef> Active </th>
+          <td mat-cell *matCellDef="let district"> {{district.value.active}} </td>
+        </ng-container>
+    
+        <!-- Recovered Column -->
+        <ng-container matColumnDef="recovered">
+          <th mat-header-cell *matHeaderCellDef> Recovered </th>
+          <td mat-cell *matCellDef="let district"> {{district.value.recovered}} </td>
+        </ng-container>
+    
+         <!-- Death Column -->
+        <ng-container matColumnDef="death">
+          <th mat-header-cell *matHeaderCellDef> Death </th>
+          <td mat-cell *matCellDef="let district"> {{district.value.deceased}} </td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+    </div>

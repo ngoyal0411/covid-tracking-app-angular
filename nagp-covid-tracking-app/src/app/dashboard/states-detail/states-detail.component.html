@@ -1,24 +1,46 @@
-<!-- <div class="table-responsive">
-  <table class="table">
-    <thead>
-      <tr>
-        <th title="name">No.</th>
-        <th>State</th>
-        <th>Total</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let state of dataSource">
-        <td>{{ state.position }}</td>
-        <td>{{ state.name }}</td>
-        <td>{{ state.total }}</td>
-      </tr>
-    </tbody>
+
+<div class="container">
+<div class="state-container mat-elevation-z8">
+  <table mat-table [dataSource]="stateWiseList" MatSort>
+
+    <!-- State Column -->
+    <ng-container matColumnDef="state">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>State </th>
+      <td mat-cell *matCellDef="let state"> 
+        <a fxFlexFill [routerLink]="''+state.state"   class="mat-row-link">{{state.state}} </a>
+      </td>
+    </ng-container>
+
+    <!-- Confirmed Column -->
+    <ng-container matColumnDef="confirmed">
+      <th mat-header-cell *matHeaderCellDef> Confirmed </th>
+      <td mat-cell *matCellDef="let state"> {{state.confirmed}} </td>
+    </ng-container>
+
+    <!-- Active Column -->
+    <ng-container matColumnDef="active">
+      <th mat-header-cell *matHeaderCellDef> Active </th>
+      <td mat-cell *matCellDef="let state"> {{state.active}} </td>
+    </ng-container>
+
+    <!-- Recovered Column -->
+    <ng-container matColumnDef="recovered">
+      <th mat-header-cell *matHeaderCellDef> Recovered </th>
+      <td mat-cell *matCellDef="let state"> {{state.recovered}} </td>
+    </ng-container>
+
+     <!-- Death Column -->
+    <ng-container matColumnDef="death">
+      <th mat-header-cell *matHeaderCellDef> Death </th>
+      <td mat-cell *matCellDef="let state"> {{state.deaths}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
-</div> -->
-<p class="actions">
-  <a  [routerLink]="['/dashboard/districts', 1]">India</a>
-</p>
+</div>
+</div>
+
 
 
 

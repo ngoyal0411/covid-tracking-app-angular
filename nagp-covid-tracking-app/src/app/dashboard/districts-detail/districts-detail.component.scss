@@ -1,0 +1,25 @@
+.district-container {
+    height: 350px;
+    overflow: auto;
+  }
+  
+  table {
+    width: 100%;
+    background-color:darkgray;
+  }
+  .container{
+      margin-top: 2em;
+  }
+  .mat-header-row{
+    vertical-align: center;
+    min-height: auto;
+    background-color:cornflowerblue;
+    font-size: 20;
+    font-weight: bolder;
+    
+   }  
+   .mat-header-cell{
+    color: black;
+    font-size: 30;
+    font-weight: bold;
+   }

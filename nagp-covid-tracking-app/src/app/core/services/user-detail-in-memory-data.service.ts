@@ -5,7 +5,6 @@ import { IUserDetail } from '../../shared/interfaces/IUserDetail';
 @Injectable({
   providedIn: 'root'
 })
-
 export class InMemoryLoginDataService implements InMemoryDbService {
   createDb() {
 

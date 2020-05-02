@@ -1,22 +1,18 @@
 <app-portal-header></app-portal-header>
-<nav mat-tab-nav-bar>
-	<a mat-tab-link
-	[routerLink]="['states']"
-	   routerLinkActive #rla="routerLinkActive"
-	   [active]="rla.isActive">
-	  Dashboard
-	</a>
-	<a mat-tab-link
-	   routerLinkActive #rla="routerLinkActive"
-	   [active]="rla.isActive">
-	  Latest News
-	</a>
-	<a mat-tab-link
-	   routerLinkActive #rla="routerLinkActive"
-	   [active]="rla.isActive">
-	  Precautions
-	</a>
-  </nav>
+
+  <nav mat-tab-nav-bar
+  class="mat-elevation-z4"
+  >
+  <a *ngFor="let link of navLinks"
+    #rla="routerLinkActive"
+    mat-tab-link
+    routerLinkActive
+    [routerLink]="link.path"
+    [routerLinkActiveOptions]="{exact: true}"
+    [active]="rla.isActive">
+    {{link.label}}
+  </a>
+</nav>
   <router-outlet></router-outlet>
 
 		

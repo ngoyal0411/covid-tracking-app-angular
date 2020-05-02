@@ -46,7 +46,8 @@ export class AdminLoginComponent implements OnInit {
   /** Clears the local storage initially */
   ngOnInit() {
     if (localStorage.getItem('TOKEN')) {
-      localStorage.clear();
+      this.route.navigateByUrl('admin/addnews')
+      //localStorage.clear();
     }
   }
 
@@ -58,7 +59,7 @@ export class AdminLoginComponent implements OnInit {
     if (this.loginService.validateUser(myform)) {
       localStorage.setItem('TOKEN', 'token');
       localStorage.setItem('username', myform.username);
-      this.route.navigate(['/dashboard']);
+      this.route.navigate(['/admin/addnews']);
       this.toastrService.success('Logged in successfully!', AppConstants.appTitle);
     } else {
       this.toastrService.warning(AppConstants.toastWarningMessage, AppConstants.appTitle);

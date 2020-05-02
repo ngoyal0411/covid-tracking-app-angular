@@ -1,4 +1,22 @@
-<p>Latest News</p>
-<p class="actions">
-    <a [routerLink]="['/dashboard/districts', 1]">India</a>
-  </p>
+<div class="container">
+<div class='md-padding' layout="row" layout-wrap>
+  <mat-card *ngFor="let news of latestNews" >
+    <mat-card-header>
+      <!-- <div mat-card-avatar class = "tp-header-image"></div> -->
+      <mat-card-title>
+        <h3>{{news.title}} : {{news.description}}</h3>
+      </mat-card-title>
+      <mat-card-subtitle>
+        <div class="container">
+       <p>{{news.summary}}</p>
+      </div>
+    </mat-card-subtitle>
+   </mat-card-header>
+    <mat-card-content>
+      <h6>Read More</h6>
+      <p>{{news.fullNews}}</p>
+    </mat-card-content>
+   
+  </mat-card>
+</div>
+</div>

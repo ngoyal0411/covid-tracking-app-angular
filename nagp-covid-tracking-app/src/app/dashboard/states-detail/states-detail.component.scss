@@ -1,0 +1,28 @@
+.state-container {
+    height: 300px;
+    overflow: auto;
+  }
+  
+  table {
+    width: 100%;
+    background-color:darkgray;
+  }
+  .container{
+      margin-top: 2em;
+  }
+  .mat-header-cell{
+    color: black;
+    font-size: 30;
+    font-weight: bold;
+   }
+   .mat-header-row{
+    vertical-align: center;
+    min-height: auto;
+    background-color:cornflowerblue;
+    font-size: 20;
+    font-weight: bolder;
+    
+   }  
+   a:link {
+    color : rgba(0, 0, 255, 0.911);
+   }

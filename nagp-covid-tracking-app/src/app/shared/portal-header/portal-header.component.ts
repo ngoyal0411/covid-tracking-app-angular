@@ -8,10 +8,12 @@ import {AppConstants} from '../appconstants/app.constants';
   styleUrls: ['./portal-header.component.scss']
 })
 export class PortalHeaderComponent {
-
-  constructor(){
-    console.log("covid-tracking-app app is running!");
-  }
   pageTitle = AppConstants.appTitle;
+  constructor(private route: Router) { }
+ 
+
+  navigateToAdmin(){
+    this.route.navigate(['/admin']);
+  }
 
 }

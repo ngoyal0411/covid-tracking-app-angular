@@ -5,7 +5,7 @@ import { AppConstants } from 'src/app/shared/appconstants/app.constants';
 import { Router } from '@angular/router';
 import { FormBuilder, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
-import { LoginService } from 'src/app/core/services/login./login.service';
+import { LoginService } from 'src/app/core/services/login/login.service';
 import { ToastrService, ToastrModule } from 'ngx-toastr';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 

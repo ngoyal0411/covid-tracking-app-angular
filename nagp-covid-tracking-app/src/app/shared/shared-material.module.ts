@@ -64,8 +64,5 @@ import { AdminHeaderComponent } from './admin-header/admin-header.component';
  * This is the class that will be imported wherever needed.
  */
 export class SharedMaterialModule{
-  constructor() {
-    console.log("Shared Material module loaded.");
-  }
  
  }

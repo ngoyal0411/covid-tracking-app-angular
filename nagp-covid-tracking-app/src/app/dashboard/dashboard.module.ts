@@ -8,7 +8,6 @@ import { StatesDetailComponent } from './states-detail/states-detail.component';
 import { LatestNewsComponent } from './latest-news/latest-news.component';
 import { PrecautionsComponent } from './precautions/precautions.component';
 import { DistrictsDetailComponent } from './districts-detail/districts-detail.component';
-import { SharedMaterialModule } from '../shared/shared-material.module';
 
 /**
  * NgModule decorator that holds all the imported modules.

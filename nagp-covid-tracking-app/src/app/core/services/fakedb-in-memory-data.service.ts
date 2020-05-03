@@ -11,16 +11,13 @@ export class InMemoryFakeDBDataService implements InMemoryDbService {
   
       /** Default User data collection. */
       const users:IUser[]= [{
-        "id": 1,
-        "username": "nishu",
-        "password": "nishu"
-      }, {
-        "id": 2,
-        "username": "admin",
-        "password": "admin"
-      }];
+        id: 1,
+        username: "nishu",
+        password: "nishu"
+      } 
+     ];
 
-      //Default News Collection
+      /** Default News Collection */
       const news: INewsDetail[] = [{
           
         id: 1,
@@ -28,7 +25,6 @@ export class InMemoryFakeDBDataService implements InMemoryDbService {
         description : "India shifts focus back to RT-PCR test",
         summary : "Senior government officials told ET that the Indian Council of Medical Research (ICMR) would not place fresh orders for antibody rapid test kits.",
         fullNews : "Senior government officials told ET that the Indian Council of Medical Research (ICMR) would not place fresh orders for antibody rapid test kits. Instead, it has asked manufacturers of RT-PCR (reverse transcription polymerase chain reaction) kits to ramp up production.",
-        
     },
     {
       id:2,
@@ -42,7 +38,7 @@ export class InMemoryFakeDBDataService implements InMemoryDbService {
       return {news,users};
     }
   
-  /** Method that generates the ids of user when not passed. */
+  /** Method that generates the ids of news when not passed. */
     genId(newsDetail: INewsDetail[]): number {
       return newsDetail.length > 0 ? Math.max(...newsDetail.map(news => news.id)) + 1 : 1;
     }

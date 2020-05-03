@@ -30,14 +30,11 @@ export class AddLatestNewsComponent implements OnInit {
 
 saveNews(currentNews: INewsDetail) {
   this.newsService.addNews(currentNews).subscribe(data=>{
-
+    console.log("Subscribed to add news");
   });
-  this.router.navigateByUrl('dashboard/news');
-this.newsService.getNewsDetails().subscribe(data=>{
-  console.log(data);
-});
 
   this.toastrService.success('News added successfully!', 'Covid Tracking App');
+  this.router.navigateByUrl('dashboard/news');
   
   
 }

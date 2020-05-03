@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PortalFooterComponent } from './portal-footer.component';
 import { SharedMaterialModule } from '../shared-material.module';
-import { By } from '@angular/platform-browser';
+import { AppConstants } from '../appconstants/app.constants';
 
 describe('PortalFooterComponent', () => {
   let component: PortalFooterComponent;
@@ -26,8 +26,8 @@ describe('PortalFooterComponent', () => {
     expect(component).toBeTruthy();
   });
   
-  it('should contain pinki in the footer toolbar', () => {
-    const footerText = "Pinki";
+  it('should contain nishu in the footer toolbar', () => {
+    const footerText = "Nishu Goel";
     const component = fixture.debugElement.componentInstance;
     expect(component.name).toContain(footerText);
   });

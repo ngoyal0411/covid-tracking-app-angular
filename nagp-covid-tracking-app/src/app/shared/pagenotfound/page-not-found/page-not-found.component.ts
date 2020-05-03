@@ -18,15 +18,9 @@ export class PageNotFoundComponent implements OnInit {
   }
 
   /**
-   * Method that takes user to dashboard when logged in.
-   * Otherwise redirectes to lgin page.
+   * Method that takes user to dashboard if page not found.
    */
   goBack(): void {
-    // if (localStorage.getItem('TOKEN') !== null) {
-    //   this.route.navigate(['/dashboard']);
-    // } else {
-    //   this.route.navigate(['/admin']);
-    // }
     this.route.navigate(['/dashboard']);
   }
 

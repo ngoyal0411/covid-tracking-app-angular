@@ -13,7 +13,6 @@ import {AppConstants} from '../../shared/appconstants/app.constants';
 })
 export class AdminLoginComponent implements OnInit {
 
-  // variable of login form.
   loginForm: FormGroup;
 
   /**
@@ -26,12 +25,13 @@ export class AdminLoginComponent implements OnInit {
               private toastrService: ToastrService ) {
 
     /**
-     * Login form initialized with default values.
+     * Login form with default values.
      */
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
     });
+    
    }
 
   /**
@@ -43,11 +43,9 @@ export class AdminLoginComponent implements OnInit {
             '';
   }
 
-  /** Clears the local storage initially */
   ngOnInit() {
-    if (localStorage.getItem('TOKEN')) {
+    if (localStorage.getItem('TOKEN')==AppConstants.authToken) {
       this.route.navigateByUrl('admin/addnews')
-      //localStorage.clear();
     }
   }
 
@@ -57,7 +55,7 @@ export class AdminLoginComponent implements OnInit {
    */
   login(myform: IUser) {
     if (this.loginService.validateUser(myform)) {
-      localStorage.setItem('TOKEN', 'token');
+      localStorage.setItem('TOKEN', AppConstants.authToken);
       localStorage.setItem('username', myform.username);
       this.route.navigate(['/admin/addnews']);
       this.toastrService.success('Logged in successfully!', AppConstants.appTitle);

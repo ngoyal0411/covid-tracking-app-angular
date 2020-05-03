@@ -5,12 +5,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./precautions.component.scss']
 })
 
-/** Dashboard component class. */
-export class PrecautionsComponent implements OnInit {
+/** Precautions component class. */
+export class PrecautionsComponent {
 
-  /** Constructor that injects router. */
   constructor() {
 }
-  ngOnInit() {
-  }
+ 
 }

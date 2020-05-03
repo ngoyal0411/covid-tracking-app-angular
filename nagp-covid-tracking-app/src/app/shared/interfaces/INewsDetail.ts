@@ -5,5 +5,4 @@ export interface INewsDetail {
     description: string;
     summary:string;
     fullNews:string;
-    newsdateTime?:Date;
 }

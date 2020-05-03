@@ -6,7 +6,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { SharedMaterialModule } from '../shared/shared-material.module';
-import { HttpClientModule } from '@angular/common/http';
 import { AdminRoutingModule } from './admin-routing.module';
 import { AddLatestNewsComponent } from './add-latest-news/add-latest-news.component';
 

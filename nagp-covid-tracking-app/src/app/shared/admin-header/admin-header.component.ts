@@ -23,7 +23,7 @@ export class AdminHeaderComponent implements OnInit {
    * sets the user name on the header.
    */
   ngOnInit() {
-    if (localStorage.getItem('TOKEN') !== null) {
+    if (localStorage.getItem('TOKEN') !== null && localStorage.getItem('TOKEN')==AppConstants.authToken) {
       this.username = 'Log out ' + localStorage.getItem('username');
       this.isLoggedIn = true;
     }
@@ -37,6 +37,9 @@ export class AdminHeaderComponent implements OnInit {
     this.route.navigate(['/admin']);
   }
 
+  /**
+   * Method that navigate admin to the dashboard.
+   */
   navigateToDashboard(){
     this.route.navigate(['/dashboard']);
   }

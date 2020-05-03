@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, of, throwError} from 'rxjs';
-import { catchError  } from 'rxjs/operators';
 import { IStateCovidReport } from 'src/app/shared/interfaces/IStateCovidReport';
+import { AppConstants } from 'src/app/shared/appconstants/app.constants';
 
 @Injectable({
     providedIn: 'root'
 })
 export class StatesDetailService{
-    private apiURL = "https://api.covid19india.org/data.json";
+    private apiURL = AppConstants.stateWiseJsonUrl;
 
     constructor(private http: HttpClient) { 
       console.log("State Detail Service");
@@ -16,6 +16,5 @@ export class StatesDetailService{
 
       getStatesReport():Observable<IStateCovidReport>{
         return this.http.get<IStateCovidReport>(this.apiURL);
-
       }
 } 

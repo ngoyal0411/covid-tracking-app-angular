@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
-import { IStateCovidReport } from 'src/app/shared/interfaces/IStateCovidReport';
 import { StatesDetailService } from 'src/app/core/services/states.detail.service';
 import { IStateWiseDetail } from 'src/app/shared/interfaces/IStateWiseDetail';
 import { Observable } from 'rxjs';
@@ -28,7 +26,6 @@ export class StatesDetailComponent implements OnInit {
 
   async getStatesCovidReport() {
     this.statesDetailService.getStatesReport().subscribe(response=>{
-      console.log(response);
       this.stateWiseList=response.statewise.sort(function(a, b) {
         var stateA = a.state.toUpperCase();
         var stateB = b.state.toUpperCase();
@@ -44,16 +41,4 @@ export class StatesDetailComponent implements OnInit {
 
 	}
 
-
 }
-// export interface Element {
-//   name: string;
-//   position: number;
-//   total: number;
-//   symbol: string;
-// }
-// const ELEMENT_DATA: Element[] = [
-//   {position: 1, name: "Hydrogen", total: 1.0079, symbol: "H"},
-//   {position: 2, name: "Helium", total: 4.0026, symbol: "He"},
-//   {position: 3, name: "Lithium", total: 6.941, symbol: "Li"},
-// ];

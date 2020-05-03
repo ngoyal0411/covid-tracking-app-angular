@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IUser } from '../../shared/interfaces/IUser';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { IUserDetail } from 'src/app/shared/interfaces/IUserDetail';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +9,6 @@ import { IUserDetail } from 'src/app/shared/interfaces/IUserDetail';
 /** This is a Login service. */
 export class LoginService {
 
-  /** Array of login user data. */
   private loginData: IUser[];
 
   private apiURL = "api/users";
@@ -26,22 +23,6 @@ export class LoginService {
     return this.http.get<IUser[]>(this.apiURL).subscribe((data)=>{
       this.loginData=data
     });     
-  }
-
-
-  /** Method to get all login user data. */
-  getUsers(): IUser[] {
-    // this.loginData = [{
-    //   "id": 1,
-    //   "username": "nishu",
-    //   "password": "nishu"
-    // }, {
-    //   "id": 2,
-    //   "username": "admin",
-    //   "password": "admin"
-    // }];
-
-    return this.loginData;
   }
 
   /** Method that validates login credentials passed by user. */

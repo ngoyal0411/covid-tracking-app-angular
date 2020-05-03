@@ -1,14 +1,17 @@
 .district-container {
     height: 350px;
     overflow: auto;
+    background-color: darkgray;
   }
   
   table {
     width: 100%;
     background-color:darkgray;
+    height: auto;
   }
   .container{
       margin-top: 2em;
+      
   }
   .mat-header-row{
     vertical-align: center;

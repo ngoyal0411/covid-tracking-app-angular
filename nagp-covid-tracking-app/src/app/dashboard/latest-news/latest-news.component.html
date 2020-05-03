@@ -2,7 +2,6 @@
 <div class='md-padding' layout="row" layout-wrap>
   <mat-card *ngFor="let news of latestNews" >
     <mat-card-header>
-      <!-- <div mat-card-avatar class = "tp-header-image"></div> -->
       <mat-card-title>
         <h3>{{news.title}} : {{news.description}}</h3>
       </mat-card-title>
@@ -18,5 +17,7 @@
     </mat-card-content>
    
   </mat-card>
+  <div class="bottom-div"></div>
 </div>
+
 </div>

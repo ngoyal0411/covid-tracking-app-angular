@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { Observable, of, throwError} from 'rxjs';
 import { catchError  } from 'rxjs/operators';
 import { INewsDetail } from 'src/app/shared/interfaces/INewsDetail';
+import { AppConstants } from 'src/app/shared/appconstants/app.constants';
 
 const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -12,7 +13,7 @@ const httpOptions = {
     providedIn: 'root'
 })
 export class NewsService{
-    private apiURL = "api/news";
+    private apiURL = AppConstants.newsApiURL;
 
     constructor(private http: HttpClient) { 
       console.log("News Service");
@@ -23,6 +24,7 @@ export class NewsService{
     return this.http.get<INewsDetail[]>(this.apiURL);     
   }
 
+  /* Add newly added new by admin */
   addNews(latestNews: INewsDetail): Observable<INewsDetail> {
     console.log(latestNews);
     return this.http.post<INewsDetail>(this.apiURL, latestNews, httpOptions).pipe(

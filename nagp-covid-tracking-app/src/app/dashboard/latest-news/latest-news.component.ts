@@ -23,7 +23,6 @@ export class LatestNewsComponent implements OnInit {
 
   listLatestNews() {
     this.newsService.getNewsDetails().subscribe(data => {
-      console.log(data);
       this.latestNews=data;
     });
    

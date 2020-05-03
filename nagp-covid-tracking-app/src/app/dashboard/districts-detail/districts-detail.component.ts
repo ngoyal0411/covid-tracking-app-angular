@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IDistrictCovidReport } from 'src/app/shared/interfaces/IDistrictCovidReport';
-import { DistrictDetailService } from 'src/app/core/services/district.detail.service';
+import { DistrictDetailService } from 'src/app/core/services/districtdetail/district.detail.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { IDistrictWiseDetail } from 'src/app/shared/interfaces/IDistrictWiseDetail';
 import { IDistrictData } from 'src/app/shared/interfaces/IDistrictData';

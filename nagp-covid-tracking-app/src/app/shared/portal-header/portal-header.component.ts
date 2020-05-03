@@ -10,7 +10,7 @@ import {AppConstants} from '../appconstants/app.constants';
 export class PortalHeaderComponent {
 
   constructor(){
-    
+    console.log("covid-tracking-app app is running!");
   }
   pageTitle = AppConstants.appTitle;
 

@@ -3,7 +3,7 @@ import { INewsDetail } from 'src/app/shared/interfaces/INewsDetail';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { NewsService } from 'src/app/core/services/news.service';
+import { NewsService } from 'src/app/core/services/news/news.service';
 
 @Component({
   selector: 'app-add-latest-news',

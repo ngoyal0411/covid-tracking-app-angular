@@ -2,7 +2,6 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PortalFooterComponent } from './portal-footer.component';
 import { SharedMaterialModule } from '../shared-material.module';
-import { AppConstants } from '../appconstants/app.constants';
 
 describe('PortalFooterComponent', () => {
   let component: PortalFooterComponent;
@@ -31,6 +30,18 @@ describe('PortalFooterComponent', () => {
     const component = fixture.debugElement.componentInstance;
     expect(component.name).toContain(footerText);
   });
+
+  it('should render nishu in paragraph tag with name', () => {
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('.name').textContent).toContain(component.name);
+  });
+
+  it('should render created by text in paragraph tag create-by', () => {
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('.create-by').textContent).toContain("Created by:");
+  });
+
+  
 
 });
 

@@ -14,12 +14,12 @@ export class LoginService {
   private apiURL = "api/users";
 
     constructor(private http: HttpClient) { 
-     this. getNewsDetails();
+     this. getUserDetails();
       console.log("Login Service");
     }
 
      /* GET ALL latest news detail. */
-  getNewsDetails() {
+  getUserDetails() {
     return this.http.get<IUser[]>(this.apiURL).subscribe((data)=>{
       this.loginData=data
     });     

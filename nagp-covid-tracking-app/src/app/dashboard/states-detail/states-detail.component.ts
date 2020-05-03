@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { StatesDetailService } from 'src/app/core/services/states.detail.service';
+import { StatesDetailService } from 'src/app/core/services/statedetail/states.detail.service';
 import { IStateWiseDetail } from 'src/app/shared/interfaces/IStateWiseDetail';
-import { Observable } from 'rxjs';
 
 @Component({
   templateUrl: './states-detail.component.html',
